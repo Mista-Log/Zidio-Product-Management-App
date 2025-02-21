@@ -1,4 +1,4 @@
-# Project Manager HTML
+# Project Manager App
 
 ## Table of Contents
 - [Installation](#installation)

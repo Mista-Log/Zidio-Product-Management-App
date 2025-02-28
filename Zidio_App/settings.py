@@ -27,8 +27,13 @@ SECRET_KEY = 'django-insecure-b@ajsiy7$3vb%wc6m3!c4q!*$_s)at=i^@#d%czdjt36zy(r@h
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ["https://zidio-product-management-app-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://zidio-product-management-app-production.up.railway.app"
+]
 
+CSRF_COOKIE_SECURE = True  # Ensures cookies are sent over HTTPS
+CSRF_COOKIE_SAMESITE = "None"  # If frontend and backend are on different domains
+CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript to access CSRF cookie (if needed)
 
 
 # Application definition

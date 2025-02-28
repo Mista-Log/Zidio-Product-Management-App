@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-b@ajsiy7$3vb%wc6m3!c4q!*$_s)at=i^@#d%czdjt36zy(r@h
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ["https://zidio-product-management-app-production.up.railway.app/"]
+
 
 
 # Application definition

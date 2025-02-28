@@ -30,41 +30,24 @@ def registerPage(request):
     return render(request, 'register.html')
 
 
-    # def loginPage(request):
-    #     if request.method == "POST":
-    #         username = request.POST.get("username")
-    #         password = request.POST.get("password")
-
-    #         user = auth.authenticate(request, username=username, password=password)
-    #         if user is not None:
-    #             auth.login(request, user)
-    #             messages.success(request, "You are now logged in.")
-    #             return redirect("home")
-    #         else:
-    #             messages.error(request, "Invalid username or password.")
-    #             return redirect("login")
-    #     return render(request, 'login.html')
-
-
 def loginPage(request):
-    # if request.method == "POST":
-    #     email = request.POST.get("email")
-    #     password = request.POST.get("password")
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
 
-    #     user = auth.authenticate(email=email, password=password)
-    #     if user is not None:
-    #         auth.login(request, user)
-    #         messages.success(request, "You are now logged in.")
-    #         return redirect("home")
-    #     else:
-    #         messages.error(request, "Invalid email or password.")
-    #         return redirect("login")        
-    #     # auth.login(request, user)
-    #     # messages.success(request, "You are now logged in.")
-    #     # return redirect("home")
-    return render(request, 'login.html')
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, "You are now logged in.")
+            return redirect("home")
+        else:
+            messages.error(request, "Invalid email or password.")
+            return render(request, 'login.html', {'error': 'Invalid email or password.'})   
+    else: 
+        return render(request, 'login.html')
 
 def homePage(request):
+    
     return render(request, 'home.html')
 
 def forgotpasswordPage(request):

@@ -55,9 +55,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-
-   
-    
+    'crispy_forms',  
 ]
 
 MIDDLEWARE = [
@@ -178,3 +176,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
